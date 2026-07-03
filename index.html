@@ -1,1 +1,1978 @@
-只要6月28日9:58生成的模型导入GitHub 让我能在手机上看见
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>绣见江南・走进非遗苏绣</title>
+  <style>
+    :root {
+      --rice: #fbf6ea;
+      --silk: #fffaf0;
+      --apricot: #f5d9bd;
+      --aqua: #d9ebe3;
+      --jade: #6d9886;
+      --ink: #15392f;
+      --muted: #6d756f;
+      --rouge: #b8505c;
+      --gold: #c9a45e;
+      --line: rgba(21, 57, 47, .12);
+      --glass: rgba(255, 250, 240, .76);
+      --shadow: 0 18px 50px rgba(55, 72, 60, .16);
+      --radius: 22px;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(184, 80, 92, .16), transparent 24%),
+        radial-gradient(circle at 82% 14%, rgba(109, 152, 134, .22), transparent 26%),
+        linear-gradient(135deg, #f9eddc, #e6f1ec 52%, #fbf7ee);
+      display: grid;
+      place-items: center;
+      overflow-x: hidden;
+    }
+
+    .phone-shell {
+      width: min(100vw, 430px);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 12px;
+    }
+
+    .app {
+      position: relative;
+      width: min(390px, 100%);
+      height: min(844px, calc(100vh - 24px));
+      min-height: 720px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .72);
+      border-radius: 34px;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.22) 1px, transparent 1px) 0 0 / 28px 28px,
+        linear-gradient(0deg, rgba(255,255,255,.19) 1px, transparent 1px) 0 0 / 28px 28px,
+        radial-gradient(circle at 50% -10%, rgba(255,255,255,.92), transparent 30%),
+        linear-gradient(180deg, var(--rice), #edf5f0 58%, #f7eee4);
+      box-shadow: 0 28px 90px rgba(30, 45, 36, .26);
+    }
+
+    .app::before,
+    .app::after {
+      content: "";
+      position: absolute;
+      inset: auto;
+      pointer-events: none;
+      opacity: .65;
+    }
+
+    .app::before {
+      width: 340px;
+      height: 340px;
+      right: -170px;
+      top: -105px;
+      border-radius: 50%;
+      border: 1px solid rgba(184, 80, 92, .18);
+      background:
+        radial-gradient(circle at 50% 50%, transparent 39%, rgba(184,80,92,.11) 40%, transparent 42%),
+        repeating-conic-gradient(from 10deg, rgba(184,80,92,.18) 0 5deg, transparent 5deg 13deg);
+      filter: blur(.1px);
+    }
+
+    .app::after {
+      left: -70px;
+      bottom: -40px;
+      width: 220px;
+      height: 270px;
+      border-radius: 48% 52% 42% 58%;
+      background:
+        linear-gradient(130deg, transparent 40%, rgba(21,57,47,.18) 41%, transparent 42%),
+        radial-gradient(circle at 52% 34%, rgba(109,152,134,.25), transparent 42%);
+      transform: rotate(-14deg);
+    }
+
+    .silk-thread {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: .72;
+    }
+
+    .silk-thread span {
+      position: absolute;
+      left: -90px;
+      width: 520px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(184,80,92,.36), rgba(201,164,94,.25), transparent);
+      transform: rotate(-18deg);
+      animation: threadFlow 8s ease-in-out infinite;
+    }
+
+    .silk-thread span:nth-child(1) { top: 118px; animation-delay: -2s; }
+    .silk-thread span:nth-child(2) { top: 304px; transform: rotate(14deg); animation-delay: -5s; }
+    .silk-thread span:nth-child(3) { top: 615px; animation-delay: -1s; }
+
+    @keyframes threadFlow {
+      0%, 100% { translate: -18px 0; opacity: .25; }
+      50% { translate: 34px 8px; opacity: .78; }
+    }
+
+    .screen {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: none;
+      flex-direction: column;
+      padding: 22px 18px 18px;
+      animation: rise .38s ease both;
+    }
+
+    .screen.active { display: flex; }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px) scale(.985); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .top-safe {
+      height: 18px;
+      flex: 0 0 auto;
+    }
+
+    .home {
+      justify-content: space-between;
+      padding-top: 30px;
+    }
+
+    .seal {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      color: var(--rouge);
+      background: rgba(255,255,255,.48);
+      border: 1px solid rgba(184,80,92,.25);
+      box-shadow: inset 0 0 0 6px rgba(184,80,92,.05);
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow {
+      color: var(--rouge);
+      font-size: 12px;
+      letter-spacing: 0;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+
+    h1 {
+      font-size: 35px;
+      line-height: 1.14;
+      letter-spacing: 0;
+      margin-bottom: 14px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      line-height: 1.72;
+      color: #345148;
+      font-weight: 650;
+      margin-bottom: 12px;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .hero-art {
+      position: relative;
+      height: 172px;
+      margin: 16px 0 10px;
+      border-radius: 28px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 52% 50%, rgba(255,255,255,.78), transparent 30%),
+        linear-gradient(150deg, rgba(217,235,227,.82), rgba(245,217,189,.66));
+      border: 1px solid rgba(255,255,255,.72);
+      box-shadow: var(--shadow);
+    }
+
+    .workshop-teaser {
+      position: relative;
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 13px;
+      margin: 10px 0 8px;
+      border-radius: 20px;
+      background:
+        radial-gradient(circle at 96% 8%, rgba(184,80,92,.16), transparent 34%),
+        rgba(255,250,240,.72);
+      border: 1px solid rgba(255,255,255,.76);
+      box-shadow: 0 12px 30px rgba(55,72,60,.1);
+      overflow: hidden;
+    }
+
+    .workshop-mini {
+      position: relative;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.48);
+      border: 8px solid rgba(126,91,55,.22);
+      display: grid;
+      place-items: center;
+    }
+
+    .workshop-mini::before,
+    .workshop-mini::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--rouge), var(--gold), var(--jade));
+    }
+
+    .workshop-mini::before {
+      width: 54px;
+      height: 2px;
+      transform: rotate(-24deg);
+      animation: threadFlow 5s ease-in-out infinite;
+    }
+
+    .workshop-mini::after {
+      width: 2px;
+      height: 50px;
+      background: linear-gradient(#fff, #526d64);
+      transform: rotate(34deg);
+    }
+
+    .workshop-teaser h3 {
+      margin: 0 0 4px;
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    .workshop-teaser p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    .teaser-status {
+      display: inline-flex;
+      margin-top: 7px;
+      min-height: 24px;
+      align-items: center;
+      padding: 4px 9px;
+      border-radius: 999px;
+      color: #7a3440;
+      background: rgba(184,80,92,.1);
+      border: 1px solid rgba(184,80,92,.16);
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .hoop {
+      position: absolute;
+      inset: 24px 52px;
+      border-radius: 50%;
+      border: 12px solid rgba(171, 122, 72, .34);
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,.65), 0 8px 26px rgba(90,80,62,.18);
+      background: rgba(255,250,240,.42);
+    }
+
+    .flower {
+      position: absolute;
+      left: 116px;
+      top: 62px;
+      width: 92px;
+      height: 92px;
+      animation: floatPetal 4.8s ease-in-out infinite;
+    }
+
+    .flower i {
+      position: absolute;
+      width: 48px;
+      height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(90deg, rgba(184,80,92,.82), rgba(245,174,174,.42));
+      transform-origin: 46px 18px;
+      opacity: .88;
+    }
+
+    .flower i:nth-child(1) { rotate: 0deg; }
+    .flower i:nth-child(2) { rotate: 55deg; }
+    .flower i:nth-child(3) { rotate: 110deg; }
+    .flower i:nth-child(4) { rotate: 165deg; }
+    .flower i:nth-child(5) { rotate: 220deg; }
+    .flower i:nth-child(6) { rotate: 275deg; }
+
+    @keyframes floatPetal {
+      0%, 100% { transform: translateY(0) rotate(-4deg); }
+      50% { transform: translateY(-8px) rotate(4deg); }
+    }
+
+    .needle {
+      position: absolute;
+      right: 88px;
+      top: 42px;
+      width: 3px;
+      height: 118px;
+      border-radius: 2px;
+      background: linear-gradient(#f8fbf8, #526d64);
+      rotate: 35deg;
+      box-shadow: 0 0 0 1px rgba(255,255,255,.45);
+    }
+
+    .needle::after {
+      content: "";
+      position: absolute;
+      width: 112px;
+      height: 58px;
+      left: -14px;
+      bottom: -32px;
+      border: 2px solid rgba(184,80,92,.48);
+      border-left: 0;
+      border-bottom: 0;
+      border-radius: 50%;
+      transform: rotate(-20deg);
+    }
+
+    .window-grid {
+      position: absolute;
+      left: 18px;
+      bottom: 16px;
+      width: 76px;
+      height: 92px;
+      border: 1px solid rgba(21,57,47,.16);
+      opacity: .58;
+      background:
+        linear-gradient(90deg, transparent 32%, rgba(21,57,47,.18) 33% 35%, transparent 36% 65%, rgba(21,57,47,.18) 66% 68%, transparent 69%),
+        linear-gradient(0deg, transparent 49%, rgba(21,57,47,.18) 50% 52%, transparent 53%);
+      border-radius: 38px 38px 8px 8px;
+    }
+
+    .actions {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    button {
+      border: 0;
+      font: inherit;
+      color: inherit;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn {
+      min-height: 48px;
+      border-radius: 16px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 800;
+      transition: transform .18s ease, opacity .18s ease, background .18s ease;
+    }
+
+    .btn:active { transform: scale(.98); }
+
+    .btn.primary {
+      color: #fffaf5;
+      background: linear-gradient(135deg, #194238, #6d9886);
+      box-shadow: 0 12px 24px rgba(21,57,47,.24);
+    }
+
+    .btn.secondary {
+      background: rgba(255,255,255,.55);
+      border: 1px solid var(--line);
+    }
+
+    .btn.rouge {
+      color: #fffaf5;
+      background: linear-gradient(135deg, #a94050, #d18473);
+      box-shadow: 0 12px 24px rgba(184,80,92,.22);
+    }
+
+    .btn.locked {
+      color: rgba(21,57,47,.48);
+      background: rgba(255,255,255,.42);
+      border: 1px dashed rgba(21,57,47,.18);
+    }
+
+    .nav {
+      display: grid;
+      grid-template-columns: 74px 1fr 72px;
+      gap: 8px;
+      align-items: center;
+      font-size: 11px;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .nav button {
+      min-height: 34px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.48);
+      border: 1px solid var(--line);
+      color: #39554c;
+      padding: 6px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .nav-title {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .content-scroll {
+      overflow: auto;
+      padding: 0 2px 12px;
+      scrollbar-width: none;
+    }
+
+    .content-scroll::-webkit-scrollbar { display: none; }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      color: #7a3440;
+      background: rgba(184,80,92,.1);
+      border: 1px solid rgba(184,80,92,.16);
+      font-size: 12px;
+      font-weight: 850;
+      margin-bottom: 10px;
+    }
+
+    .question-title {
+      font-size: 22px;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .guide {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .ar-card {
+      position: relative;
+      min-height: 180px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.82);
+      background:
+        radial-gradient(circle at 50% 48%, rgba(255,255,255,.9), transparent 28%),
+        linear-gradient(140deg, rgba(217,235,227,.84), rgba(255,250,240,.66), rgba(245,217,189,.72));
+      box-shadow: var(--shadow);
+      margin-bottom: 14px;
+    }
+
+    .ar-visual {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+    }
+
+    .ar-visual::before {
+      content: "";
+      width: 118px;
+      height: 118px;
+      border-radius: 50%;
+      border: 7px solid rgba(109,89,59,.22);
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,.8);
+      animation: pulseHoop 2.8s ease-in-out infinite;
+    }
+
+    .ar-card.playing .ar-visual::before { animation-duration: 1.2s; }
+
+    @keyframes pulseHoop {
+      0%, 100% { transform: scale(.96); opacity: .72; }
+      50% { transform: scale(1.04); opacity: 1; }
+    }
+
+    .stitch-line {
+      position: absolute;
+      width: 150px;
+      height: 72px;
+      border: 2px dashed rgba(184,80,92,.56);
+      border-left: 0;
+      border-bottom: 0;
+      border-radius: 50%;
+      animation: stitchDraw 2.8s ease-in-out infinite;
+    }
+
+    @keyframes stitchDraw {
+      0%, 100% { transform: translateX(-18px) rotate(-12deg); opacity: .35; }
+      50% { transform: translateX(18px) rotate(10deg); opacity: .9; }
+    }
+
+    .play-copy {
+      position: absolute;
+      inset: auto 16px 16px;
+      display: grid;
+      gap: 4px;
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(255,250,240,.72);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,.72);
+      text-align: center;
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .play-copy small {
+      color: var(--muted);
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .question-card,
+    .knowledge-card,
+    .panel {
+      border-radius: var(--radius);
+      background: var(--glass);
+      border: 1px solid rgba(255,255,255,.76);
+      box-shadow: 0 14px 34px rgba(55,72,60,.1);
+      backdrop-filter: blur(14px);
+    }
+
+    .question-card {
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+
+    .question-text {
+      font-size: 17px;
+      line-height: 1.55;
+      font-weight: 850;
+    }
+
+    .options {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .option {
+      width: 100%;
+      text-align: left;
+      min-height: 52px;
+      border-radius: 16px;
+      padding: 12px 13px;
+      background: rgba(255,255,255,.55);
+      border: 1px solid rgba(21,57,47,.11);
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 8px;
+      align-items: center;
+      transition: transform .16s ease, border .16s ease, background .16s ease;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .option:active { transform: scale(.985); }
+
+    .option b {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: var(--jade);
+      font-size: 13px;
+    }
+
+    .option.correct {
+      background: rgba(109,152,134,.18);
+      border-color: rgba(109,152,134,.5);
+    }
+
+    .option.wrong {
+      background: rgba(184,80,92,.12);
+      border-color: rgba(184,80,92,.45);
+    }
+
+    .bottom-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding-top: 10px;
+      flex: 0 0 auto;
+    }
+
+    .analysis-view {
+      display: none;
+    }
+
+    .analysis-view.active { display: block; }
+
+    .knowledge-card {
+      padding: 18px;
+      transform-style: preserve-3d;
+      animation: flipIn .55s ease both;
+    }
+
+    @keyframes flipIn {
+      from { opacity: 0; transform: rotateX(18deg) translateY(18px); }
+      to { opacity: 1; transform: rotateX(0) translateY(0); }
+    }
+
+    .result-title {
+      color: var(--rouge);
+      font-size: 19px;
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+
+    .knowledge-body {
+      color: #344c44;
+      font-size: 14px;
+      line-height: 1.75;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .toast {
+      position: absolute;
+      z-index: 10;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%) translateY(20px);
+      max-width: 320px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: #fffaf5;
+      background: rgba(21,57,47,.88);
+      box-shadow: 0 12px 28px rgba(21,57,47,.25);
+      opacity: 0;
+      pointer-events: none;
+      transition: .25s ease;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .modal-mask {
+      position: absolute;
+      inset: 0;
+      z-index: 20;
+      display: none;
+      place-items: center;
+      padding: 22px;
+      background: rgba(21, 57, 47, .18);
+      backdrop-filter: blur(10px);
+    }
+
+    .modal-mask.active { display: grid; }
+
+    .modal {
+      width: 100%;
+      border-radius: 26px;
+      padding: 22px;
+      background: rgba(255,250,240,.88);
+      border: 1px solid rgba(255,255,255,.82);
+      box-shadow: var(--shadow);
+    }
+
+    .modal h2 {
+      font-size: 22px;
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+
+    .modal p {
+      font-size: 14px;
+      color: #425850;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      max-height: 410px;
+      overflow: auto;
+      margin: 14px 0;
+    }
+
+    .q-pill {
+      min-height: 54px;
+      border-radius: 15px;
+      background: rgba(255,255,255,.58);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      font-weight: 900;
+      display: grid;
+      place-items: center;
+    }
+
+    .q-pill.done {
+      background: rgba(109,152,134,.2);
+      color: #245448;
+    }
+
+    .complete {
+      justify-content: center;
+      text-align: center;
+    }
+
+    .complete .panel {
+      padding: 24px 18px;
+    }
+
+    .complete h2 {
+      font-size: 28px;
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .medal {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle, rgba(255,255,255,.78), transparent 45%),
+        conic-gradient(from 20deg, rgba(184,80,92,.68), rgba(201,164,94,.56), rgba(109,152,134,.65), rgba(184,80,92,.68));
+      box-shadow: 0 16px 34px rgba(55,72,60,.18);
+      font-size: 42px;
+    }
+
+    .workshop h2 {
+      font-size: 24px;
+      line-height: 1.25;
+      margin: 8px 0 8px;
+    }
+
+    .progress {
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.62);
+      overflow: hidden;
+      margin: 14px 0;
+      border: 1px solid rgba(21,57,47,.08);
+    }
+
+    .progress span {
+      display: block;
+      height: 100%;
+      width: 25%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--rouge), var(--gold), var(--jade));
+      transition: width .32s ease;
+    }
+
+    .craft-stage {
+      position: relative;
+      min-height: 320px;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 50% 42%, rgba(255,255,255,.82), transparent 35%),
+        linear-gradient(135deg, rgba(217,235,227,.88), rgba(245,217,189,.68));
+      border: 1px solid rgba(255,255,255,.78);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      margin: 14px 0 10px;
+      touch-action: none;
+      user-select: none;
+    }
+
+    .craft-copy {
+      position: relative;
+      padding: 13px 14px;
+      border-radius: 18px;
+      background: rgba(255,250,240,.78);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.72);
+      font-size: 13px;
+      line-height: 1.55;
+      box-shadow: 0 10px 26px rgba(55,72,60,.08);
+      margin-bottom: 12px;
+    }
+
+    .craft-copy strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+
+    .split-silk {
+      position: absolute;
+      left: 50%;
+      top: 34px;
+      width: 220px;
+      height: 188px;
+      transform: translateX(-50%);
+    }
+
+    .split-silk i {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 2px;
+      height: 160px;
+      background: linear-gradient(#fff, rgba(184,80,92,.72), rgba(201,164,94,.35));
+      border-radius: 999px;
+      transform-origin: 50% 0;
+      animation: splitMove 2.4s ease-in-out infinite;
+    }
+
+    .split-silk i:nth-child(1) { rotate: -28deg; animation-delay: -.2s; }
+    .split-silk i:nth-child(2) { rotate: -16deg; animation-delay: -.4s; }
+    .split-silk i:nth-child(3) { rotate: -5deg; animation-delay: -.6s; }
+    .split-silk i:nth-child(4) { rotate: 6deg; animation-delay: -.8s; }
+    .split-silk i:nth-child(5) { rotate: 17deg; animation-delay: -1s; }
+    .split-silk i:nth-child(6) { rotate: 29deg; animation-delay: -1.2s; }
+
+    @keyframes splitMove {
+      0%,100% { transform: translateY(0) scaleY(.92); opacity: .62; }
+      50% { transform: translateY(10px) scaleY(1.08); opacity: 1; }
+    }
+
+    .split-guide {
+      position: absolute;
+      left: 32px;
+      right: 32px;
+      top: 218px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.58);
+      border: 1px solid rgba(21,57,47,.1);
+      overflow: hidden;
+    }
+
+    .split-guide span {
+      display: block;
+      height: 100%;
+      width: 0%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--rouge), var(--gold), var(--jade));
+      transition: width .2s ease;
+    }
+
+    .silk-handle {
+      position: absolute;
+      left: 24px;
+      top: 198px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fffaf5;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--rouge), var(--gold));
+      box-shadow: 0 14px 28px rgba(184,80,92,.24);
+      border: 3px solid rgba(255,255,255,.72);
+      transition: left .08s linear;
+    }
+
+    .dye-palette {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      top: 228px;
+      transform: none;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
+    }
+
+    .dye {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255,.7);
+      box-shadow: 0 10px 24px rgba(55,72,60,.16);
+      transition: transform .18s ease;
+    }
+
+    .dye.selected { transform: scale(1.13); outline: 2px solid rgba(21,57,47,.35); }
+
+    .pattern-board {
+      position: absolute;
+      left: 34px;
+      right: 34px;
+      top: 22px;
+      height: 190px;
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,250,240,.48);
+      border: 1px solid rgba(255,255,255,.7);
+      box-shadow: inset 0 0 0 1px rgba(21,57,47,.06);
+    }
+
+    .embroidery-svg {
+      width: 230px;
+      height: 170px;
+      overflow: visible;
+    }
+
+    .paint-region {
+      fill: rgba(255,255,255,.54);
+      stroke: rgba(21,57,47,.42);
+      stroke-width: 2;
+      transition: fill .22s ease, transform .18s ease;
+      cursor: pointer;
+    }
+
+    .paint-region:active { transform: scale(.98); }
+
+    .line-art {
+      fill: none;
+      stroke: rgba(21,57,47,.52);
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+
+    .stitch-canvas {
+      position: absolute;
+      left: 30px;
+      right: 30px;
+      top: 36px;
+      height: 180px;
+      border-radius: 50%;
+      border: 10px solid rgba(126,91,55,.25);
+      background: rgba(255,250,240,.35);
+    }
+
+    .draw-surface {
+      position: absolute;
+      left: 40px;
+      right: 40px;
+      top: 45px;
+      height: 164px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .draw-surface canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .draw-line {
+      position: absolute;
+      left: 78px;
+      top: 98px;
+      width: 180px;
+      height: 88px;
+      border-top: 3px dashed rgba(184,80,92,.72);
+      border-radius: 50%;
+      animation: stitchDraw 1.8s ease-in-out infinite;
+    }
+
+    .needle-tools {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      top: 230px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .needle-tools button {
+      min-height: 36px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.65);
+      border: 1px solid var(--line);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .needle-tools button.active {
+      color: #fff;
+      background: var(--jade);
+    }
+
+    .final-art {
+      position: absolute;
+      inset: 28px 52px 116px;
+      border-radius: 50%;
+      border: 12px solid rgba(126,91,55,.26);
+      display: grid;
+      place-items: center;
+      background: rgba(255,250,240,.5);
+    }
+
+    .final-art .flower { position: relative; left: auto; top: auto; }
+
+    .diy-card {
+      position: absolute;
+      inset: 24px 40px 104px;
+      border-radius: 32px;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 50% 45%, rgba(255,255,255,.82), transparent 48%),
+        linear-gradient(140deg, rgba(255,250,240,.7), rgba(217,235,227,.7));
+      border: 12px solid rgba(126,91,55,.24);
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,.6);
+    }
+
+    .diy-card svg {
+      width: 220px;
+      height: 180px;
+      filter: drop-shadow(0 8px 14px rgba(55,72,60,.15));
+    }
+
+    .diy-stitches {
+      stroke: rgba(184,80,92,.72);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-dasharray: 7 7;
+      fill: none;
+      animation: stitchDraw 2s ease-in-out infinite;
+    }
+
+    .offline .panel {
+      padding: 22px 18px;
+    }
+
+    .offline h2 {
+      font-size: 27px;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .offline-list {
+      display: grid;
+      gap: 10px;
+      margin: 18px 0;
+      text-align: left;
+    }
+
+    .offline-item {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.5);
+      border: 1px solid var(--line);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .offline-item b {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fffaf5;
+      background: var(--jade);
+    }
+
+    .unit-select h2 {
+      font-size: 28px;
+      line-height: 1.25;
+      margin: 8px 0 10px;
+    }
+
+    .unit-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .unit-card {
+      width: 100%;
+      min-height: 168px;
+      border-radius: 24px;
+      padding: 18px;
+      text-align: left;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(184,80,92,.14), transparent 32%),
+        rgba(255,250,240,.72);
+      border: 1px solid rgba(255,255,255,.78);
+      box-shadow: var(--shadow);
+      display: grid;
+      align-content: space-between;
+      gap: 14px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .unit-card::after {
+      content: "";
+      position: absolute;
+      right: -28px;
+      bottom: -42px;
+      width: 148px;
+      height: 148px;
+      border-radius: 50%;
+      border: 10px solid rgba(126,91,55,.13);
+      pointer-events: none;
+    }
+
+    .unit-card.hard {
+      background:
+        radial-gradient(circle at 85% 15%, rgba(21,57,47,.16), transparent 32%),
+        rgba(236,247,241,.72);
+    }
+
+    .unit-card h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    .unit-meta {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .unit-progress {
+      display: grid;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 800;
+      color: #36564d;
+    }
+
+    .unit-progress-bar {
+      height: 8px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(255,255,255,.66);
+      border: 1px solid rgba(21,57,47,.08);
+    }
+
+    .unit-progress-bar span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--rouge), var(--gold), var(--jade));
+      width: 0%;
+    }
+
+    .corner-slogan {
+      margin-top: 10px;
+      color: rgba(21,57,47,.58);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    @media (max-height: 760px) {
+      .app { min-height: 680px; height: calc(100vh - 16px); }
+      .hero-art { height: 170px; }
+      h1 { font-size: 30px; }
+      .craft-stage { min-height: 280px; }
+      .ar-card { min-height: 156px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="phone-shell">
+    <section class="app" aria-label="绣见江南 App 原型">
+      <div class="silk-thread" aria-hidden="true"><span></span><span></span><span></span></div>
+
+      <section class="screen home active" id="homeScreen">
+        <div>
+          <div class="seal">绣</div>
+          <div class="eyebrow">AR 非遗课堂 · 苏绣答题闯关</div>
+          <h1>绣见江南・<br>走进非遗苏绣</h1>
+          <p class="subtitle">16 道绣艺考题，解锁千年丝缕匠心，亲手体验苏绣制作全过程</p>
+          <p class="small">从入门常识到顶级双面三异绣，闯关答题，沉浸式读懂苏绣非遗</p>
+          <div class="hero-art" aria-hidden="true">
+            <div class="window-grid"></div>
+            <div class="hoop"></div>
+            <div class="flower"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="needle"></div>
+          </div>
+          <button class="workshop-teaser" id="workshopTeaser">
+            <span class="workshop-mini" aria-hidden="true"></span>
+            <span>
+              <h3>模拟苏绣工坊</h3>
+              <p>劈丝、草木染、针法走线，生成你的 DIY 花鸟绣品</p>
+              <span class="teaser-status" id="teaserStatus">完成 16 题后解锁</span>
+            </span>
+          </button>
+          <p class="corner-slogan">一丝一缕，皆是江南非遗文脉</p>
+        </div>
+        <div class="actions">
+          <button class="btn primary" id="startBtn">开始闯关</button>
+          <button class="btn secondary" id="overviewBtn">题库总览</button>
+          <button class="btn locked" id="workshopEntry">进入模拟绣坊（未通关）</button>
+        </div>
+      </section>
+
+      <section class="screen unit-select" id="unitScreen">
+        <div class="top-safe"></div>
+        <div class="nav">
+          <button id="unitHomeBtn">返回首页</button>
+          <div class="nav-title">选择答题单元</div>
+          <button id="unitOverviewBtn">题库总览</button>
+        </div>
+        <div class="content-scroll">
+          <div class="tag">苏绣非遗答题闯关</div>
+          <h2>选择一个单元开始闯关</h2>
+          <p class="small">前八道为一个单元：简单题。后八道为一个单元：难度题。两个单元全部完成后解锁模拟苏绣工坊。</p>
+          <div class="unit-list">
+            <button class="unit-card" id="simpleUnitBtn">
+              <div>
+                <div class="eyebrow">第 1-8 题</div>
+                <h3>简单题｜丝绣入门</h3>
+                <p class="unit-meta">从苏绣起源、桑蚕丝、双面绣、草木染到江南配色，建立基础非遗知识框架。</p>
+              </div>
+              <div class="unit-progress">
+                <span id="simpleUnitText">已完成 0 / 8</span>
+                <div class="unit-progress-bar"><span id="simpleUnitProgress"></span></div>
+              </div>
+            </button>
+            <button class="unit-card hard" id="hardUnitBtn">
+              <div>
+                <div class="eyebrow">第 9-16 题</div>
+                <h3>难度题｜绣艺进阶</h3>
+                <p class="unit-meta">深入“平光齐匀”、双面三异绣、1/48 劈丝、套针渐变与花鸟光影表现。</p>
+              </div>
+              <div class="unit-progress">
+                <span id="hardUnitText">已完成 0 / 8</span>
+                <div class="unit-progress-bar"><span id="hardUnitProgress"></span></div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen quiz" id="quizScreen">
+        <div class="top-safe"></div>
+        <div class="nav">
+          <button id="backHomeBtn">返回工坊首页</button>
+          <div class="nav-title" id="quizNavTitle">苏绣非遗答题闯关｜第 1 页 / 共 16 页</div>
+          <button id="reviewBtn">知识点回看</button>
+        </div>
+        <div class="content-scroll">
+          <div class="tag" id="bankTag">【丝绣入门・基础常识】</div>
+          <h2 class="question-title" id="questionTitle"></h2>
+          <p class="guide">阅读题干与选项，选出正确答案，作答后解锁苏绣知识点卡片</p>
+          <button class="ar-card" id="arCard" aria-label="播放 AR 动画" hidden></button>
+          <div id="questionView">
+            <article class="question-card">
+              <p class="question-text" id="questionText"></p>
+              <div class="options" id="options"></div>
+            </article>
+            <p class="small">点击选择单一答案，作答后自动跳转知识点解析页</p>
+          </div>
+          <div class="analysis-view" id="analysisView">
+            <article class="knowledge-card">
+              <h3 class="result-title" id="resultTitle"></h3>
+              <p class="knowledge-body" id="resultBody"></p>
+            </article>
+            <div class="actions">
+              <button class="btn secondary" id="saveKnowledgeBtn">收藏本条绣艺知识点</button>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-bar">
+          <button class="btn secondary" id="prevBtn">上一题</button>
+          <button class="btn primary" id="nextBtn">下一题</button>
+        </div>
+      </section>
+
+      <section class="screen complete" id="completeScreen">
+        <div class="panel">
+          <div class="medal">锦</div>
+          <h2>闯关圆满通关！你已吃透苏绣完整非遗知识体系</h2>
+          <p class="subtitle">基础常识 ×8 + 高阶绣艺难题 ×8</p>
+          <p class="small">全部 16 道考题完成，解锁隐藏互动：【模拟苏绣工坊】</p>
+          <div class="actions">
+            <button class="btn rouge" id="goWorkshopBtn">进入模拟绣坊｜亲手制作苏绣</button>
+            <button class="btn secondary" id="completeHomeBtn">返回答题首页</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen workshop" id="workshopScreen">
+        <div class="top-safe"></div>
+        <div class="nav">
+          <button id="workshopHomeBtn">返回答题首页</button>
+          <div class="nav-title">模拟苏绣工坊</div>
+          <button id="restartWorkshopBtn">重玩</button>
+        </div>
+        <div class="content-scroll">
+          <div class="tag">以题识绣，以动悟艺</div>
+          <h2 id="workshopTitle">沉浸式模拟苏绣工坊｜亲手复刻传统绣作</h2>
+          <p class="small" id="workshopIntro">流程分四大工序：劈丝→上绷配色→针法走线→成品上色</p>
+          <div class="progress"><span id="craftProgress"></span></div>
+          <div class="craft-stage" id="craftStage"></div>
+          <div class="craft-copy" id="craftCopy"></div>
+        </div>
+        <div class="bottom-bar">
+          <button class="btn secondary" id="craftPrevBtn">上一工序</button>
+          <button class="btn primary" id="craftNextBtn">下一工序</button>
+        </div>
+      </section>
+
+      <section class="screen complete offline" id="offlineScreen">
+        <div class="panel">
+          <div class="medal">坊</div>
+          <h2>线下苏绣体验环节已开启</h2>
+          <p class="subtitle">带着你的 DIY 绣作灵感，走进真实苏绣工坊</p>
+          <p class="small">现场可体验真丝劈丝、绣绷上布、老师示范套针走线，并领取专属非遗研学打卡章。</p>
+          <div class="offline-list">
+            <div class="offline-item"><b>1</b><span>签到领取：苏绣体验材料包、草木染色卡、练习绷架</span></div>
+            <div class="offline-item"><b>2</b><span>匠人带练：1/48 劈丝观察、套针走线、花鸟明暗层次</span></div>
+            <div class="offline-item"><b>3</b><span>作品留念：把线上 DIY 图样转成线下体验参考稿</span></div>
+          </div>
+          <div class="actions">
+            <button class="btn rouge" id="offlineReserveBtn">预约线下体验名额</button>
+            <button class="btn secondary" id="offlineHomeBtn">返回工坊首页</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="modal-mask active" id="welcomeModal">
+        <div class="modal">
+          <h2>欢迎踏入苏绣 AR 非遗课堂！</h2>
+          <p>16 页专属绣艺考题，分基础入门、高阶难点两大题库，每题搭配专属 AR 动画解析；闯完全部关卡，解锁「模拟苏绣工坊」互动小游戏，亲手劈丝、走线、配色，复刻传统绣作工艺。</p>
+          <button class="btn primary" id="closeWelcomeBtn">开始体验</button>
+        </div>
+      </div>
+
+      <div class="modal-mask" id="overviewModal">
+        <div class="modal">
+          <h2>16 道考题一览</h2>
+          <p>千年吴绣，一页一关慢慢读懂。点击题号可直接跳转。</p>
+          <div class="overview-grid" id="overviewGrid"></div>
+          <button class="btn secondary" id="closeOverviewBtn">关闭</button>
+        </div>
+      </div>
+
+      <div class="toast" id="toast">提示</div>
+    </section>
+  </main>
+
+  <script>
+    const questions = [
+      {
+        title: "苏绣溯源｜正统起源前身",
+        ar: "吴国宫廷绣 3D 场景",
+        question: "苏绣正式形成前，较为公认的正统起源前身是？",
+        options: ["唐宋民间刺绣", "春秋吴国宫廷吴绣", "蜀绣分支", "明清商品绣"],
+        answer: 1,
+        knowledge: "苏绣源远流长，常被追溯至春秋吴地的宫廷刺绣传统。吴地丝织发达、水乡审美细腻，为后来苏绣形成精细雅洁的风格奠定了基础。"
+      },
+      {
+        title: "丝之本源｜苏绣核心原料",
+        ar: "太湖桑蚕丝特写模型",
+        question: "苏绣细腻光润质感最核心的原材料是？",
+        options: ["化纤线", "天然桑蚕熟丝", "棉线", "麻线"],
+        answer: 1,
+        knowledge: "天然桑蚕丝光泽柔和、韧性强，能够被劈成极细丝缕，是苏绣表现细密针脚、柔和过渡和丝绸光感的根基。"
+      },
+      {
+        title: "传世一绝｜苏绣标志性工艺",
+        ar: "双面绣模型翻转",
+        question: "最能体现苏绣精巧与高难度的标志性工艺是？",
+        options: ["单面锁绣", "双面异样绣", "粗线平绣", "贴布绣"],
+        answer: 1,
+        knowledge: "双面异样绣要求一块绣面两面可观，甚至呈现不同图案、色彩与针法，是苏绣高超技艺和严密走线控制的代表。"
+      },
+      {
+        title: "纹样寄情｜红牡丹丝线寓意",
+        ar: "红牡丹纹样悬浮",
+        question: "苏绣中红牡丹纹样常用来表达哪类寓意？",
+        options: ["富贵吉祥", "离别相思", "平安健康", "清寒隐逸"],
+        answer: 0,
+        knowledge: "牡丹在传统纹样中象征富贵、繁盛与吉祥。苏绣常通过花色层次与丝线光泽，让牡丹呈现典雅而不浓俗的江南气韵。"
+      },
+      {
+        title: "绣坊鼎盛｜苏绣黄金时代",
+        ar: "明清绣坊场景动画",
+        question: "苏绣技艺、题材和商品流通最为鼎盛的时期主要是？",
+        options: ["汉代", "明清时期", "元代", "近现代以后"],
+        answer: 1,
+        knowledge: "明清时期江南经济繁荣，绣坊兴盛，苏绣从闺阁技艺、民间工艺扩展到商品与文人审美结合的成熟阶段。"
+      },
+      {
+        title: "草木染丝｜传统丝线染色",
+        ar: "草木萃取染色流程",
+        question: "传统苏绣丝线染色更常强调哪一种方式？",
+        options: ["工业化工染料", "江南天然草木染", "油漆颜料", "金属喷涂"],
+        answer: 1,
+        knowledge: "传统丝线染色重视天然、柔和、耐看的色相。草木染能形成水墨般的复色层次，与苏绣润、雅、清、淡的审美相合。"
+      },
+      {
+        title: "制绣工序｜辨别非遗制作步骤",
+        ar: "绣绷与绣针模型展示",
+        question: "以下哪一项不属于苏绣制作中的典型工艺步骤？",
+        options: ["上绷配线", "劈丝", "浇筑塑形", "针法走线"],
+        answer: 2,
+        knowledge: "苏绣制作通常包含设计画稿、上绷、配色、劈丝、施针、整理等步骤；浇筑塑形属于立体材料成型方式，不是苏绣传统工序。"
+      },
+      {
+        title: "水墨江南｜苏绣整体色彩风格",
+        ar: "水墨低饱和色卡弹窗",
+        question: "苏绣整体色彩风格更偏向哪一种？",
+        options: ["高饱和撞色", "水墨柔和复色", "纯黑白单色", "荧光强对比"],
+        answer: 1,
+        knowledge: "苏绣善用低饱和、细层次、含蓄复色来表现江南水墨气质，追求雅致、清润、耐看的视觉效果。"
+      },
+      {
+        title: "四艺准则｜“匀” 字绣品标准",
+        ar: "绣针疏密对比特写动画",
+        question: "苏绣公认四大核心艺术标准“平、光、齐、匀”中，“匀”主要指什么？",
+        options: ["丝线粗细均匀", "针脚排布疏密均匀", "画面色彩平均", "纹样大小一致"],
+        answer: 1,
+        knowledge: "苏绣四大艺术特征中，“匀”强调针脚排列疏密有度、过渡自然，使绣面平整细腻，画面经得起近距离观看。"
+      },
+      {
+        title: "绣艺巅峰｜层级最高复杂绣种",
+        ar: "双面三异绣成品 3D 翻转",
+        question: "苏绣技艺层级里难度最高、工艺最复杂的绣种是？",
+        options: ["单面精细花鸟绣", "普通双面绣", "双面异样绣", "双面三异绣"],
+        answer: 3,
+        knowledge: "双面三异绣能做到两面图案、色彩、针法均不同，既要隐藏线头，又要控制两面的构图和光色关系，是苏绣高阶技艺代表。"
+      },
+      {
+        title: "劈丝极限｜超细蚕丝劈丝工艺",
+        ar: "桑蚕丝与化纤线劈丝对比放大",
+        question: "苏绣一根标准花线极限劈丝规格，以及超细劈丝对材质的要求是？",
+        options: ["可劈 1/24 丝，化纤线可劈至超细", "可劈 1/48 丝，仅天然桑蚕丝能完成超细劈分", "可劈 1/12 丝，棉线适配劈丝工艺", "可劈 1/64 丝，所有绣线均可劈细分丝"],
+        answer: 1,
+        knowledge: "苏绣劈丝工艺可将一根花线劈至极细，常以 1/48 丝体现精微程度。天然桑蚕丝纤维长、韧性好，更适合完成超细劈分。"
+      },
+      {
+        title: "清代分流｜两大苏绣发展体系",
+        ar: "闺阁刺绣与商品绣分屏动画",
+        question: "清代苏绣分化出两大发展体系，分别是？",
+        options: ["宫廷绣、民间绣", "闺阁绣、商品绣", "花鸟绣、山水绣", "吴绣、苏绣"],
+        answer: 1,
+        knowledge: "清代苏绣形成“闺阁绣”与“商品绣”两大体系：前者偏重文雅趣味与女性生活空间，后者面向市场流通与绣坊生产。"
+      },
+      {
+        title: "绣之灵魂｜渐变核心套针针法",
+        ar: "套针分层走线动态演示",
+        question: "被称为苏绣灵魂，专门负责画面色彩渐变过渡的核心针法是？",
+        options: ["打籽针", "平针", "套针", "撒针"],
+        answer: 2,
+        knowledge: "套针通过单套、双套、集套等分层衔接，让不同色线自然咬合，是苏绣表现花瓣、羽毛、皮毛和光影渐变的关键针法。"
+      },
+      {
+        title: "配色美学｜苏绣传统配色准则",
+        ar: "水墨淡雅色卡与浓烈撞色对比",
+        question: "苏绣传统配色美学核心准则不包含以下哪一项？",
+        options: ["润、雅", "清、淡", "浓、烈", "多用中间过渡色"],
+        answer: 2,
+        knowledge: "苏绣传统配色讲究润、雅、清、淡，善用中间色和复色，极少依赖浓烈原色直接对撞。"
+      },
+      {
+        title: "花鸟心法｜阴阳向背创作内核",
+        ar: "牡丹阴阳明暗与鸟背光影 AR 特写",
+        question: "苏绣花鸟题材创作核心准则“花有阴阳，鸟有向背”的核心目的是什么？",
+        options: ["区分丝线材质", "塑造花鸟立体光影、真实自然", "区分不同纹样寓意", "规范针法使用顺序"],
+        answer: 1,
+        knowledge: "苏绣花鸟讲究“花有阴阳，鸟有向背”，通过明暗、层次和走线方向塑造立体光影，让绣面呈现如画般的真实感。"
+      },
+      {
+        title: "传世巅峰｜《猫蝶图》虚实光影工艺",
+        ar: "《猫蝶图》AR 复原与猫毛细节放大",
+        question: "清代苏绣双面绣传世巅峰代表作《猫蝶图》，主要依靠哪一项核心工艺实现皮毛细腻虚实光影？",
+        options: ["大量金银辅丝", "多层套针叠加", "极致超细劈丝工艺", "大面积高饱和配色"],
+        answer: 2,
+        knowledge: "《猫蝶图》一类精微作品依靠超细劈丝与细密针脚来表现猫毛蓬松、眼神光泽和虚实层次，体现苏绣近乎绘画的表现力。"
+      }
+    ];
+
+    const craftSteps = [
+      {
+        title: "第一道工序・蚕丝劈丝",
+        hint: "滑动屏幕拆分桑蚕丝，体验 1/48 超细劈丝工艺",
+        note: "仅天然桑蚕丝可完成超细劈丝，是苏绣细腻质感根基",
+        render: () => `<div class="split-silk" id="splitSilk"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="silk-handle" id="silkHandle">劈</div>
+          <div class="split-guide"><span id="splitProgress"></span></div>`
+      },
+      {
+        title: "第二道工序・草木染丝配色",
+        hint: "选取江南天然草木染料，给无色花鸟底稿逐块上色",
+        note: "传统苏绣遵循润、雅、清、淡，极少浓烈原色",
+        render: () => `<div class="pattern-board">
+          <svg class="embroidery-svg" viewBox="0 0 240 180" aria-label="待上色花鸟底稿">
+            <path class="paint-region" data-region="petalA" d="M86 78 C42 48 44 17 85 34 C111 45 113 68 86 78Z"></path>
+            <path class="paint-region" data-region="petalB" d="M112 74 C100 28 134 10 158 42 C174 66 145 85 112 74Z"></path>
+            <path class="paint-region" data-region="petalC" d="M103 92 C69 113 36 101 53 69 C70 44 94 62 103 92Z"></path>
+            <path class="paint-region" data-region="petalD" d="M121 92 C157 102 162 136 126 139 C98 141 96 106 121 92Z"></path>
+            <circle class="paint-region" data-region="core" cx="106" cy="82" r="18"></circle>
+            <path class="paint-region" data-region="leafA" d="M130 114 C169 92 196 103 199 139 C165 145 144 134 130 114Z"></path>
+            <path class="paint-region" data-region="leafB" d="M75 118 C44 141 27 137 22 109 C48 98 65 101 75 118Z"></path>
+            <path class="line-art" d="M106 100 C113 123 118 143 119 168 M108 100 C87 122 66 138 42 154 M118 106 C145 120 167 128 206 132"></path>
+            <path class="line-art" d="M190 48 C207 34 225 42 221 60 C215 80 190 75 184 57 C176 62 167 66 156 68"></path>
+          </svg>
+        </div>
+        <div class="dye-palette">
+          <button class="dye selected" data-color="#b8505c" style="background:#b8505c" aria-label="胭脂红"></button>
+          <button class="dye" data-color="#6d9886" style="background:#6d9886" aria-label="淡青绿"></button>
+          <button class="dye" data-color="#c9a45e" style="background:#c9a45e" aria-label="秋金"></button>
+          <button class="dye" data-color="#d9ebe3" style="background:#d9ebe3" aria-label="水青"></button>
+          <button class="dye" data-color="#f5d9bd" style="background:#f5d9bd" aria-label="浅杏"></button>
+          <button class="dye" data-color="#15392f" style="background:#15392f" aria-label="墨绿"></button>
+        </div>`
+      },
+      {
+        title: "第三道工序・核心针法走线",
+        hint: "选择套针 / 平针 / 打籽针，拖动丝线绘制花鸟阴阳光影",
+        note: "套针为苏绣灵魂针法，分层上色实现画面渐变",
+        render: () => `<div class="stitch-canvas"></div><div class="draw-line"></div>
+          <div class="draw-surface"><canvas id="stitchCanvas" width="520" height="300" aria-label="针法走线画布"></canvas></div>
+          <div class="needle-tools"><button class="active">套针</button><button>平针</button><button>打籽针</button></div>`
+      },
+      {
+        title: "你的专属苏绣作品完成！",
+        hint: "结合你的劈丝进度、草木染配色与针法轨迹，生成专属花鸟绣品",
+        note: "保存绣作作品后，将进入线下苏绣体验环节",
+        render: () => `<div class="diy-card" id="diyCard"></div>`
+      }
+    ];
+
+    const state = {
+      current: 0,
+      answered: Array(16).fill(false),
+      selected: Array(16).fill(null),
+      unlocked: false,
+      activeUnit: null,
+      craft: 0,
+      craftData: {
+        split: 0,
+        selectedColor: "#b8505c",
+        dyed: {},
+        stitchTool: "套针",
+        stitchPoints: 0
+      }
+    };
+
+    const $ = (id) => document.getElementById(id);
+
+    function showScreen(name) {
+      document.querySelectorAll(".screen").forEach(screen => screen.classList.remove("active"));
+      $(name).classList.add("active");
+    }
+
+    function getUnitForIndex(index) {
+      return index < 8
+        ? { key: "simple", label: "简单题", tag: "【简单题・丝绣入门】", start: 0, end: 7 }
+        : { key: "hard", label: "难度题", tag: "【难度题・绣艺进阶】", start: 8, end: 15 };
+    }
+
+    function unitDone(unit) {
+      return state.answered.slice(unit.start, unit.end + 1).every(Boolean);
+    }
+
+    function allDone() {
+      return state.answered.every(Boolean);
+    }
+
+    function renderUnitProgress() {
+      const simpleDone = state.answered.slice(0, 8).filter(Boolean).length;
+      const hardDone = state.answered.slice(8, 16).filter(Boolean).length;
+      $("simpleUnitText").textContent = `已完成 ${simpleDone} / 8`;
+      $("hardUnitText").textContent = `已完成 ${hardDone} / 8`;
+      $("simpleUnitProgress").style.width = `${simpleDone / 8 * 100}%`;
+      $("hardUnitProgress").style.width = `${hardDone / 8 * 100}%`;
+    }
+
+    function openUnitSelect() {
+      renderUnitProgress();
+      showScreen("unitScreen");
+    }
+
+    function startUnit(key) {
+      const unit = key === "hard" ? getUnitForIndex(8) : getUnitForIndex(0);
+      state.activeUnit = unit;
+      const nextUnanswered = state.answered
+        .slice(unit.start, unit.end + 1)
+        .findIndex(done => !done);
+      state.current = nextUnanswered === -1 ? unit.start : unit.start + nextUnanswered;
+      showScreen("quizScreen");
+      renderQuestion();
+    }
+
+    function toast(message) {
+      const el = $("toast");
+      el.textContent = message;
+      el.classList.add("show");
+      window.clearTimeout(toast.timer);
+      toast.timer = window.setTimeout(() => el.classList.remove("show"), 1600);
+    }
+
+    function renderQuestion() {
+      const q = questions[state.current];
+      const unit = state.activeUnit || getUnitForIndex(state.current);
+      $("quizNavTitle").textContent = `苏绣非遗答题闯关｜第 ${state.current + 1} 页 / 共 16 页`;
+      $("bankTag").textContent = unit.tag;
+      $("questionTitle").textContent = q.title;
+      $("questionText").textContent = q.question;
+
+      const options = $("options");
+      options.innerHTML = "";
+      q.options.forEach((option, index) => {
+        const btn = document.createElement("button");
+        btn.className = "option";
+        btn.innerHTML = `<b>${String.fromCharCode(65 + index)}</b><span>${option}</span>`;
+        btn.addEventListener("click", () => answerQuestion(index));
+        if (state.answered[state.current]) {
+          btn.disabled = true;
+          if (index === q.answer) btn.classList.add("correct");
+          if (index === state.selected[state.current] && index !== q.answer) btn.classList.add("wrong");
+        }
+        options.appendChild(btn);
+      });
+
+      const hasAnswered = state.answered[state.current];
+      $("questionView").style.display = hasAnswered ? "none" : "block";
+      $("analysisView").classList.toggle("active", hasAnswered);
+      const atUnitEnd = state.current === unit.end;
+      $("nextBtn").textContent = atUnitEnd ? "完成本单元" : "下一题";
+      $("nextBtn").classList.toggle("locked", !hasAnswered);
+      $("prevBtn").style.visibility = state.current === unit.start ? "hidden" : "visible";
+      if (hasAnswered) renderAnalysis();
+    }
+
+    function answerQuestion(index) {
+      state.selected[state.current] = index;
+      state.answered[state.current] = true;
+      const isCorrect = index === questions[state.current].answer;
+      toast(isCorrect ? "恭喜答对！知识点卡片已解锁" : "再品丝绣工艺，正在展开解析");
+      window.setTimeout(renderQuestion, 420);
+    }
+
+    function renderAnalysis() {
+      const q = questions[state.current];
+      const selected = state.selected[state.current];
+      const isCorrect = selected === q.answer;
+      const correctText = `${String.fromCharCode(65 + q.answer)}. ${q.options[q.answer]}`;
+      $("resultTitle").textContent = isCorrect ? "恭喜答对！解锁苏绣知识点卡片" : `再品丝绣工艺，正确答案：${correctText}`;
+      $("resultBody").innerHTML = isCorrect
+        ? `<strong>核心知识点：</strong>${q.knowledge}<br><br>长按保存知识点卡片，收藏非遗绣艺干货`
+        : `<strong>完整知识点讲解：</strong>${q.knowledge}<br><br>重新阅读知识点卡片，巩固苏绣技艺细节`;
+    }
+
+    function openOverview() {
+      const grid = $("overviewGrid");
+      grid.innerHTML = "";
+      questions.forEach((q, index) => {
+        const btn = document.createElement("button");
+        btn.className = `q-pill ${state.answered[index] ? "done" : ""}`;
+        btn.textContent = index + 1;
+        btn.title = q.title;
+        btn.addEventListener("click", () => {
+          state.current = index;
+          state.activeUnit = getUnitForIndex(index);
+          $("overviewModal").classList.remove("active");
+          showScreen("quizScreen");
+          renderQuestion();
+        });
+        grid.appendChild(btn);
+      });
+      $("overviewModal").classList.add("active");
+    }
+
+    function updateHomeLock() {
+      const btn = $("workshopEntry");
+      btn.textContent = state.unlocked ? "进入模拟绣坊" : "进入模拟绣坊（未通关）";
+      btn.className = `btn ${state.unlocked ? "rouge" : "locked"}`;
+      $("teaserStatus").textContent = state.unlocked ? "已解锁｜进入体验" : "完成 16 题后解锁";
+    }
+
+    function goNextQuestion() {
+      if (!state.answered[state.current]) {
+        toast("下一题需答完题目才可点击");
+        return;
+      }
+      const unit = state.activeUnit || getUnitForIndex(state.current);
+      if (state.current < unit.end) {
+        state.current += 1;
+        renderQuestion();
+        return;
+      }
+      if (!allDone()) {
+        toast(`${unit.label}已完成，可继续选择另一个单元`);
+        openUnitSelect();
+        return;
+      }
+      state.unlocked = true;
+      updateHomeLock();
+      showScreen("completeScreen");
+    }
+
+    function renderCraft() {
+      const step = craftSteps[state.craft];
+      $("workshopTitle").textContent = state.craft === 0
+        ? "沉浸式模拟苏绣工坊｜亲手复刻传统绣作"
+        : step.title;
+      $("workshopIntro").textContent = state.craft === 0
+        ? "流程分四大工序：劈丝→上绷配色→针法走线→成品上色"
+        : "AR 动画看绣艺，指尖互动做苏绣";
+      $("craftProgress").style.width = `${(state.craft + 1) * 25}%`;
+      $("craftStage").innerHTML = step.render();
+      $("craftCopy").innerHTML = `<strong>${step.title}</strong>${step.hint}<br><span class="small">${step.note}</span>`;
+      $("craftPrevBtn").style.visibility = state.craft === 0 ? "hidden" : "visible";
+      $("craftNextBtn").textContent = state.craft === 3 ? "保存绣作并进入线下体验" : "下一工序";
+      if (state.craft === 0) updateSplitVisual();
+      if (state.craft === 1) renderPaintState();
+      if (state.craft === 2) setupStitchCanvas();
+      if (state.craft === 3) renderDiyArtwork();
+      bindCraftInteractions();
+    }
+
+    function bindCraftInteractions() {
+      const handle = $("silkHandle");
+      if (handle) {
+        const dragSplit = (event) => {
+          const rect = $("craftStage").getBoundingClientRect();
+          const percent = Math.max(0, Math.min(1, (event.clientX - rect.left - 46) / (rect.width - 92)));
+          state.craftData.split = Math.max(state.craftData.split, Math.round(percent * 100));
+          updateSplitVisual();
+          if (state.craftData.split >= 88) toast("已完成 1/48 超细劈丝体验");
+        };
+        handle.addEventListener("pointerdown", (event) => {
+          handle.setPointerCapture(event.pointerId);
+          dragSplit(event);
+        });
+        handle.addEventListener("pointermove", (event) => {
+          if (event.buttons) dragSplit(event);
+        });
+      }
+
+      document.querySelectorAll(".dye").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".dye").forEach(item => item.classList.remove("selected"));
+          btn.classList.add("selected");
+          state.craftData.selectedColor = btn.dataset.color || "#b8505c";
+          toast("已调配一缕江南柔和复色");
+        });
+      });
+      document.querySelectorAll(".paint-region").forEach(region => {
+        region.addEventListener("click", () => {
+          const name = region.dataset.region;
+          state.craftData.dyed[name] = state.craftData.selectedColor;
+          region.style.fill = state.craftData.selectedColor;
+          const dyedCount = Object.keys(state.craftData.dyed).length;
+          toast(dyedCount >= 7 ? "花鸟底稿已完成草木染上色" : "已给底稿添上一层草木染");
+        });
+      });
+      document.querySelectorAll(".needle-tools button").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".needle-tools button").forEach(item => item.classList.remove("active"));
+          btn.classList.add("active");
+          state.craftData.stitchTool = btn.textContent;
+          toast(`已切换为${btn.textContent}走线`);
+        });
+      });
+    }
+
+    function updateSplitVisual() {
+      const progress = $("splitProgress");
+      const handle = $("silkHandle");
+      const silk = $("splitSilk");
+      if (!progress || !handle || !silk) return;
+      progress.style.width = `${state.craftData.split}%`;
+      handle.style.left = `calc(24px + (100% - 76px) * ${state.craftData.split / 100})`;
+      silk.style.transform = `translateX(-50%) scaleX(${1 + state.craftData.split / 120})`;
+      silk.style.opacity = `${0.72 + state.craftData.split / 360}`;
+    }
+
+    function renderPaintState() {
+      document.querySelectorAll(".paint-region").forEach(region => {
+        const color = state.craftData.dyed[region.dataset.region];
+        if (color) region.style.fill = color;
+      });
+      document.querySelectorAll(".dye").forEach(btn => {
+        btn.classList.toggle("selected", btn.dataset.color === state.craftData.selectedColor);
+      });
+    }
+
+    function setupStitchCanvas() {
+      const canvas = $("stitchCanvas");
+      if (!canvas) return;
+      const ctx = canvas.getContext("2d");
+      const drawGuide = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "rgba(255,250,240,.18)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.strokeStyle = "rgba(21,57,47,.18)";
+        ctx.lineWidth = 3;
+        ctx.setLineDash([8, 10]);
+        ctx.beginPath();
+        ctx.ellipse(260, 148, 205, 110, 0, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      };
+      drawGuide();
+      let drawing = false;
+      let last = null;
+      const point = (event) => {
+        const rect = canvas.getBoundingClientRect();
+        return {
+          x: (event.clientX - rect.left) / rect.width * canvas.width,
+          y: (event.clientY - rect.top) / rect.height * canvas.height
+        };
+      };
+      const draw = (event) => {
+        const p = point(event);
+        if (!last) last = p;
+        const colors = { "套针": "#b8505c", "平针": "#15392f", "打籽针": "#c9a45e" };
+        ctx.strokeStyle = colors[state.craftData.stitchTool] || "#b8505c";
+        ctx.lineWidth = state.craftData.stitchTool === "打籽针" ? 8 : 4;
+        ctx.lineCap = "round";
+        if (state.craftData.stitchTool === "打籽针") {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
+          ctx.fillStyle = ctx.strokeStyle;
+          ctx.fill();
+        } else {
+          ctx.beginPath();
+          ctx.moveTo(last.x, last.y);
+          ctx.lineTo(p.x, p.y);
+          ctx.stroke();
+        }
+        last = p;
+        state.craftData.stitchPoints += 1;
+      };
+      canvas.addEventListener("pointerdown", (event) => {
+        drawing = true;
+        last = null;
+        canvas.setPointerCapture(event.pointerId);
+        draw(event);
+      });
+      canvas.addEventListener("pointermove", (event) => {
+        if (!drawing) return;
+        draw(event);
+        if (state.craftData.stitchPoints === 18) toast("针脚沿花鸟光影缓缓铺开…");
+      });
+      canvas.addEventListener("pointerup", () => { drawing = false; });
+      canvas.addEventListener("pointercancel", () => { drawing = false; });
+    }
+
+    function renderDiyArtwork() {
+      const dyed = state.craftData.dyed;
+      const pick = (key, fallback) => dyed[key] || fallback;
+      const splitLabel = state.craftData.split >= 80 ? "1/48 超细劈丝" : state.craftData.split >= 40 ? "半劈细丝" : "初劈丝缕";
+      const stitchLabel = state.craftData.stitchPoints >= 24 ? "细密针脚" : state.craftData.stitchPoints >= 8 ? "轻量走线" : "留白针意";
+      $("diyCard").innerHTML = `<svg viewBox="0 0 240 190" aria-label="DIY 苏绣作品">
+        <path d="M114 170 C108 132 103 115 92 92" stroke="#15392f" stroke-width="4" fill="none" stroke-linecap="round"></path>
+        <path d="M96 80 C48 48 50 18 90 34 C119 46 122 72 96 80Z" fill="${pick("petalA", "#b8505c")}"></path>
+        <path d="M118 74 C103 28 140 10 164 43 C180 68 150 88 118 74Z" fill="${pick("petalB", "#d18473")}"></path>
+        <path d="M104 94 C70 116 34 102 54 69 C72 44 98 62 104 94Z" fill="${pick("petalC", "#f5d9bd")}"></path>
+        <path d="M124 94 C160 102 166 136 128 140 C98 142 97 108 124 94Z" fill="${pick("petalD", "#b8505c")}"></path>
+        <circle cx="110" cy="84" r="18" fill="${pick("core", "#c9a45e")}"></circle>
+        <path d="M130 116 C170 92 198 104 200 139 C166 146 144 134 130 116Z" fill="${pick("leafA", "#6d9886")}"></path>
+        <path d="M78 120 C46 143 28 138 22 110 C50 98 66 102 78 120Z" fill="${pick("leafB", "#d9ebe3")}"></path>
+        <path class="diy-stitches" d="M44 150 C78 130 92 112 110 84 C132 108 154 124 202 132"></path>
+        <text x="120" y="184" text-anchor="middle" fill="#15392f" font-size="12">${splitLabel} · ${state.craftData.stitchTool} · ${stitchLabel}</text>
+      </svg>`;
+    }
+
+    $("closeWelcomeBtn").addEventListener("click", () => $("welcomeModal").classList.remove("active"));
+    $("startBtn").addEventListener("click", openUnitSelect);
+    $("overviewBtn").addEventListener("click", openOverview);
+    $("unitHomeBtn").addEventListener("click", () => { updateHomeLock(); showScreen("homeScreen"); });
+    $("unitOverviewBtn").addEventListener("click", openOverview);
+    $("simpleUnitBtn").addEventListener("click", () => startUnit("simple"));
+    $("hardUnitBtn").addEventListener("click", () => startUnit("hard"));
+    $("closeOverviewBtn").addEventListener("click", () => $("overviewModal").classList.remove("active"));
+    $("backHomeBtn").addEventListener("click", () => { updateHomeLock(); showScreen("homeScreen"); });
+    $("completeHomeBtn").addEventListener("click", () => { updateHomeLock(); showScreen("homeScreen"); });
+    $("reviewBtn").addEventListener("click", openOverview);
+    $("saveKnowledgeBtn").addEventListener("click", () => toast("收藏本条绣艺知识点"));
+    $("prevBtn").addEventListener("click", () => {
+      const unit = state.activeUnit || getUnitForIndex(state.current);
+      if (state.current > unit.start) {
+        state.current -= 1;
+        renderQuestion();
+      }
+    });
+    $("nextBtn").addEventListener("click", goNextQuestion);
+    $("workshopEntry").addEventListener("click", () => {
+      if (!state.unlocked) {
+        toast("完成 16 道考题后解锁模拟苏绣工坊");
+        return;
+      }
+      showScreen("workshopScreen");
+      renderCraft();
+    });
+    $("workshopTeaser").addEventListener("click", () => {
+      if (!state.unlocked) {
+        toast("完成简单题和难度题后解锁模拟苏绣工坊");
+        return;
+      }
+      showScreen("workshopScreen");
+      renderCraft();
+    });
+    $("goWorkshopBtn").addEventListener("click", () => { showScreen("workshopScreen"); renderCraft(); });
+    $("workshopHomeBtn").addEventListener("click", () => { updateHomeLock(); showScreen("homeScreen"); });
+    $("restartWorkshopBtn").addEventListener("click", () => { resetCraft(); renderCraft(); });
+    $("craftPrevBtn").addEventListener("click", () => {
+      if (state.craft > 0) {
+        state.craft -= 1;
+        renderCraft();
+      }
+    });
+    $("craftNextBtn").addEventListener("click", () => {
+      if (state.craft < 3) {
+        state.craft += 1;
+        renderCraft();
+      } else {
+        toast("DIY 绣作作品已生成，进入线下体验环节");
+        window.setTimeout(() => showScreen("offlineScreen"), 650);
+      }
+    });
+    $("offlineReserveBtn").addEventListener("click", () => toast("已为你生成线下体验预约意向"));
+    $("offlineHomeBtn").addEventListener("click", () => { updateHomeLock(); showScreen("homeScreen"); });
+
+    function resetCraft() {
+      state.craft = 0;
+      state.craftData = {
+        split: 0,
+        selectedColor: "#b8505c",
+        dyed: {},
+        stitchTool: "套针",
+        stitchPoints: 0
+      };
+    }
+
+    renderQuestion();
+    updateHomeLock();
+  </script>
+</body>
+</html>
